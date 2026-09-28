@@ -1,5 +1,5 @@
 class Queue:
-  def __init__(self, cap=10):
+  def __init__(self, cap=3):
     self._front = 0
     self._rear = -1
     self._a = [None for _ in range(cap)]
@@ -29,11 +29,12 @@ class Queue:
     self._a[self._c] = None
     self._rear = self._c - 1
     return data
+  def is_empty(self):
+    return self._c == 0
+  def is_full(self):
+    return self._c == len(self._a)
 queue = Queue()
 queue.enqueue(10)
 queue.enqueue(20)
 queue.enqueue(30)
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
-print(queue.dequeue())
+queue.enqueue(40)
