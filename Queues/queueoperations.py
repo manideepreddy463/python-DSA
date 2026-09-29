@@ -31,7 +31,7 @@ class Queue:
 
   def is_full(self):
       if self._rear is not None:
-        if self._top+1==self.size:
+        if self._front+1==self.size:
           return True
       return False
 queue=Queue()
